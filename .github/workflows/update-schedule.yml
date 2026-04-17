@@ -1,0 +1,47 @@
+name: Update Sea Dogs schedule
+
+on:
+  schedule:
+    # Every 4 hours, offset to avoid the top-of-hour traffic spike on GH cron.
+    - cron: "17 */4 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "fetch_schedule.py"
+      - ".github/workflows/update-schedule.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-schedule
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch schedule
+        run: python fetch_schedule.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- seadogs.ics; then
+            echo "No schedule changes."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seadogs.ics
+          git commit -m "Update schedule ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git push
