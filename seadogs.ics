@@ -9,18 +9,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:nwibl-35370-3472381@nwibl.org
-DTSTAMP:20260423T023000Z
-DTSTART:20260423T023000Z
-DTEND:20260423T053000Z
-SUMMARY:Sea Dogs @ Bridgetown Brewers
-DESCRIPTION:Sea Dogs @ Bridgetown Brewers\nDetails: https://leagues.teamlin
- kt.com/Leagues/event/35370/3472381
-LOCATION:Walker Stadium
-GEO:45.488337;-122.569578
-URL:https://leagues.teamlinkt.com/Leagues/event/35370/3472381
-END:VEVENT
-BEGIN:VEVENT
 UID:nwibl-35370-3472385@nwibl.org
 DTSTAMP:20260430T023000Z
 DTSTART:20260430T023000Z
@@ -199,5 +187,17 @@ DESCRIPTION:Sea Dogs @ Bridgetown Brewers\nDetails: https://leagues.teamlin
 LOCATION:Sckavone Stadium
 GEO:45.466095;-122.639037
 URL:https://leagues.teamlinkt.com/Leagues/event/35370/3472434
+END:VEVENT
+BEGIN:VEVENT
+UID:nwibl-35370-3472381@nwibl.org
+DTSTAMP:20260901T023000Z
+DTSTART:20260901T023000Z
+DTEND:20260901T053000Z
+SUMMARY:Sea Dogs @ Bridgetown Brewers
+DESCRIPTION:Sea Dogs @ Bridgetown Brewers\nDetails: https://leagues.teamlin
+ kt.com/Leagues/event/35370/3472381
+LOCATION:Date and Location TBD
+GEO:45.505106;-122.675026
+URL:https://leagues.teamlinkt.com/Leagues/event/35370/3472381
 END:VEVENT
 END:VCALENDAR
